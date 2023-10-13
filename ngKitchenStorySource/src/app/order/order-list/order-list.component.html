@@ -1,0 +1,26 @@
+<table class="table table-striped">
+    <tr>
+        <th>Order ID</th>
+        <th>User ID</th>
+        <th>Summary Order ID</th>
+        <th>Product ID</th>
+        <th>Create Stamp</th>
+        <th>Update stamp</th>        
+        <th>Actions------------------------</th>
+    </tr>
+    <tr *ngFor="let order of orderinfo">
+        <td>{{order.id}}</td>
+        <td>{{order.userid}}</td>
+        <td>{{order.ordersummaryid}}</td>
+        <td>{{order.productid}}</td>
+        <td>{{order.createdate}}</td>
+        <td>{{order.modifydate}}</td>
+        <td>
+            <input type="button"  value="View" class="btn btn-info" (click)="viewOrderData(order.id)" />
+            &nbsp;
+            <input type="button"  value="Modify" class="btn btn-success" (click)="updateOrderData(order.id)" />            
+            &nbsp;
+            <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteOrderData(order.id)" />
+        </td>
+    </tr>
+</table>

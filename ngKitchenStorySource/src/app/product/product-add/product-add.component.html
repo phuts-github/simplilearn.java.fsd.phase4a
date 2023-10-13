@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Register Product
+            </div>
+            <div class="card-body">
+                <form #myform="ngForm">
+                    Product Name :
+                    <input type="text"  class="form-control"  [(ngModel)]="addproduct.name" name="name" />
+                    <br />
+                    Product Description : 
+                    <input type="text"  class="form-control"  [(ngModel)]="addproduct.descr" name="descr" />
+                    <br />
+                    Product Image Path:
+                    <input type="text"  class="form-control"  [(ngModel)]="addproduct.imagepath" name="imagepath" />
+                    <br />
+                    Product Price :
+                    <input type="text"  class="form-control"  [(ngModel)]="addproduct.price" name="price" />
+                    <br />
+                    Product Status : 
+                    <input type="text"  class="form-control"  [(ngModel)]="addproduct.status" name="status" />
+                    <br />
+                    <input type="submit"  value="Add"  class="btn btn-primary"  (click)="AddProductInfo()" />
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

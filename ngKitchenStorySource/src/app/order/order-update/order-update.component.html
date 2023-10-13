@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Update Order
+            </div>
+            <div class="card-body" >
+                Order ID :
+                <input type="number" class="form-control" [(ngModel)]="updateorder.id" disabled="true"/>
+                <br />  
+                User ID :
+                <input type="number" class="form-control" [(ngModel)]="updateorder.userid"/>
+                <br />
+                Order Summary ID : 
+                <input type="number" class="form-control" [(ngModel)]="updateorder.ordersummaryid"/>
+                <br />
+                Product ID :
+                <input type="number" class="form-control" [(ngModel)]="updateorder.productid"/>
+                <br />                            
+                Create Stamp :
+                <input type="text" class="form-control" [(ngModel)]="updateorder.createdate" disabled="true"/>
+                <br />      
+                Update Stamp :
+                <input type="text" class="form-control" [(ngModel)]="updateorder.modifydate" disabled="true"/>
+                <br />                  
+                <input type="button"  value="Cancel" class="btn btn-info" (click)="cancelAndBackToOrderList()"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="Update" class="btn btn-success"  (click)="updateOrderData()" />
+            </div>
+        </div>
+    </div>
+</div>

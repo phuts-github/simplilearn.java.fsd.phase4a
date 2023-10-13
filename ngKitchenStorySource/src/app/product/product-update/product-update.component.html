@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Update Product
+            </div>
+            <div class="card-body" >
+                Product ID :
+                <input type="number" class="form-control" [(ngModel)]="updateproduct.id" disabled="true"/>
+                <br />  
+                Name :
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.name"/>
+                <br />
+                Description : 
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.descr"/>
+                <br />
+                Image Path :
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.imagepath"/>
+                <br />
+                Price :
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.price"/>
+                <br />    
+                Stock :
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.status"/>
+                <br />                            
+                Create Stamp :
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.createdate" disabled="true"/>
+                <br />      
+                Update Stamp :
+                <input type="text" class="form-control" [(ngModel)]="updateproduct.modifydate" disabled="true"/>
+                <br />                  
+                <input type="button"  value="Cancel" class="btn btn-info" (click)="cancelAndBackToProductList()"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="Update" class="btn btn-success"  (click)="updateProductData()" />
+            </div>
+        </div>
+    </div>
+</div>

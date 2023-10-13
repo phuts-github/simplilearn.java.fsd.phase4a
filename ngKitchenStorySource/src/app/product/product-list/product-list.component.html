@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image Path</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Create Stamp</th>
+        <th>Update stamp</th>        
+        <th>Actions------------------------</th>
+    </tr>
+    <tr *ngFor="let product of productinfo">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.descr}}</td>
+        <td>{{product.imagepath}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.status}}</td>
+        <td>{{product.createdate}}</td>
+        <td>{{product.modifydate}}</td>
+        <td>
+            <input type="button"  value="View" class="btn btn-info" (click)="viewProductData(product.id)" />
+            &nbsp;
+            <input type="button"  value="Modify" class="btn btn-success" (click)="updateProductData(product.id)" />            
+            &nbsp;
+            <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteProductData(product.id)" />
+        </td>
+    </tr>
+</table>

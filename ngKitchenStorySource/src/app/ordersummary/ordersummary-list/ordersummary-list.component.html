@@ -1,0 +1,26 @@
+<table class="table table-striped">
+    <tr>
+        <th>Ordersummary ID</th>
+        <th>User ID</th>
+        <th>Order Item ID</th>
+        <th>Amount</th>
+        <th>Create Stamp</th>
+        <th>Update stamp</th>        
+        <th>Actions------------------------</th>
+    </tr>
+    <tr *ngFor="let ordersummary of ordersummaryinfo">
+        <td>{{ordersummary.id}}</td>
+        <td>{{ordersummary.userid}}</td>
+        <td>{{ordersummary.orderitemsid}}</td>
+        <td>{{ordersummary.amount}}</td>
+        <td>{{ordersummary.createdate}}</td>
+        <td>{{ordersummary.modifydate}}</td>
+        <td>
+            <input type="button"  value="View" class="btn btn-info" (click)="viewOrdersummaryData(ordersummary.id)" />
+            &nbsp;
+            <input type="button"  value="Modify" class="btn btn-success" (click)="updateOrdersummaryData(ordersummary.id)" />            
+            &nbsp;
+            <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteOrdersummaryData(ordersummary.id)" />
+        </td>
+    </tr>
+</table>

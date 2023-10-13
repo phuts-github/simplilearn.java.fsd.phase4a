@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Register User
+            </div>
+            <div class="card-body">
+                <form #myform="ngForm">
+                    First Name :
+                    <input type="text"  class="form-control"  [(ngModel)]="adduser.fname" name="fname" />
+                    <br />
+                    Last Name : 
+                    <input type="text"  class="form-control"  [(ngModel)]="adduser.lname" name="lname" />
+                    <br />
+                    Email ID:
+                    <input type="email"  class="form-control"  [(ngModel)]="adduser.email" name="email" />
+                    <br />
+                    Password:
+                    <input type="password"  class="form-control"  [(ngModel)]="adduser.pass" name="pass" />
+                    <br />                
+                    <input type="submit"  value="Register"  class="btn btn-primary"  (click)="AddUserInfo()" />
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

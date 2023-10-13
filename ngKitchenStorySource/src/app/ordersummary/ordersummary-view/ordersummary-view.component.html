@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                View Ordersummary
+            </div>
+            <div class="card-body" >
+                Ordersummary ID :
+                <input type="number" class="form-control" [(ngModel)]="ordersummary.id" disabled="true"/>
+                <br />  
+                User ID :
+                <input type="number" class="form-control" [(ngModel)]="ordersummary.userid" disabled="true"/>
+                <br />
+                Item ID : 
+                <input type="number" class="form-control" [(ngModel)]="ordersummary.orderitemsid" disabled="true"/>
+                <br />
+                Price :
+                <input type="number" class="form-control" [(ngModel)]="ordersummary.amount" disabled="true"/>
+                <br />  
+                Create Stamp :
+                <input type="text" class="form-control" [(ngModel)]="ordersummary.createdate" disabled="true"/>
+                <br />      
+                Update Stamp :
+                <input type="text" class="form-control" [(ngModel)]="ordersummary.modifydate" disabled="true"/>
+                <br />                                          
+                <input type="button"  value="Close" class="btn btn-info" (click)="closeAndBackToOrdersummaryList()"/>
+                &nbsp;
+                <input type="button"  value="Modify" class="btn btn-success" (click)="updateOrdersummaryData(ordersummary.id)"/>
+                &nbsp;
+                <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteOrdersummaryData(ordersummary.id)"/>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<app-admin-header></app-admin-header>
+<!-- Menu for : Admin user -->
+<nav class="navbar navbar-expand-sm  bg-primary navbar-dark" *ngIf="getUserInfo().id > 0 && getUserInfo().fname == 'admin'">
+  <ul class="navbar-nav">    
+    <li  class="nav-item">
+      <a routerLink="UserListDetails" routerLinkActive="active" class="nav-link">User List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="UserAddDetails" routerLinkActive="active" class="nav-link">User Add</a>
+    </li>
+    <li  class="nav-item">
+      <a routerLink="ProductListDetails" routerLinkActive="active" class="nav-link">Product List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="ProductAddDetails" routerLinkActive="active" class="nav-link">Product Add</a>
+    </li>    
+    <li  class="nav-item">
+      <a routerLink="OrderListDetails" routerLinkActive="active" class="nav-link">Order List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="OrderAddDetails" routerLinkActive="active" class="nav-link" >Order Add</a>
+    </li> 
+ 
+    <li  class="nav-item">
+      <a routerLink="PaymentListDetails" routerLinkActive="active" class="nav-link" >Payment List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="PaymentAddDetails" routerLinkActive="active" class="nav-link">Payment Add</a>
+    </li>    
+    <li  class="nav-item">
+      <a routerLink="OrdersummaryListDetails" routerLinkActive="active" class="nav-link">Ordersummary List</a>
+    </li>
+    
+    <li class="nav-item">
+      <a routerLink="OrdersummaryAddDetails" routerLinkActive="active" class="nav-link">Ordersummary Add</a>
+    </li>    
+   
+    <li class="nav-item">
+      <a routerLink="ShopmenuListDetails" routerLinkActive="active" class="nav-link">Shop Menu List</a>
+    </li>   
+  </ul>
+</nav>
+<!-- Menu for : Normal user -->
+<nav class="navbar navbar-expand-sm  bg-primary navbar-dark" *ngIf="getUserInfo().id > 0  && getUserInfo().fname != 'admin'">
+  <ul class="navbar-nav">    
+      
+    <li  class="nav-item">
+      <a routerLink="OrderListDetails" routerLinkActive="active" class="nav-link">Order List</a>
+    </li>
+
+    <li  class="nav-item">
+      <a routerLink="OrdersummaryListDetails" routerLinkActive="active" class="nav-link">Ordersummary List</a>
+    </li>
+    
+    <li class="nav-item"> 
+      <a routerLink="ShopmenuListDetails" routerLinkActive="active" class="nav-link">Shop Menu List</a>
+    </li>   
+  </ul>
+</nav>
+<!-- Menu for : No logged-in user -->
+<nav class="navbar navbar-expand-sm  bg-primary navbar-dark" *ngIf="this.getUserInfo().id == 0">
+  <ul class="navbar-nav">    
+    <!-- <li class="nav-item">
+      <a routerLink="ShopmenuListDetails" routerLinkActive="active" class="nav-link">Shop Menu List</a>
+    </li>    -->
+  </ul>
+</nav>
+<br>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

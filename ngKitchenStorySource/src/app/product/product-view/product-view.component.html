@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                View Product
+            </div>
+            <div class="card-body">
+                Product ID :
+                <input type="number" class="form-control" [(ngModel)]="product.id" disabled="true"/>
+                 
+                Name :
+                <input type="text" class="form-control" [(ngModel)]="product.name" disabled="true"/>
+                
+                Description : 
+                <input type="text" class="form-control" [(ngModel)]="product.descr" disabled="true"/>
+                
+                Image Path :
+                <input type="text" class="form-control" [(ngModel)]="product.imagepath" disabled="true"/>
+                
+                Price :
+                <input type="text" class="form-control" [(ngModel)]="product.price" disabled="true"/>
+                      
+                Stock :
+                <input type="text" class="form-control" [(ngModel)]="product.status" disabled="true"/>
+                  
+                Create Stamp :
+                <input type="text" class="form-control" [(ngModel)]="product.createdate" disabled="true"/>
+                      
+                Update Stamp :
+                <input type="text" class="form-control" [(ngModel)]="product.modifydate" disabled="true"/>
+                <br/>
+                <div> Image <img src="assets/menu/imagesPizza/{{product.imagepath}}"  height="60px" width="60px"/></div>
+                <br/>                                         
+                <input type="button"  value="Close" class="btn btn-info" (click)="closeAndBackToProductList()"/>
+                &nbsp;
+                <input type="button"  value="Modify" class="btn btn-success" (click)="updateProductData(product.id)"/>
+                &nbsp;
+                <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteProductData(product.id)"/>
+            </div>
+        </div>
+    </div>
+</div>

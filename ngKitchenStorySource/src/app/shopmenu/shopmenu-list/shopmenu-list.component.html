@@ -1,0 +1,100 @@
+Search 
+<input type="text" [(ngModel)]="searchMenuName" required="true" name="searchMenuName" placeholder="filter menu list"/>
+&NonBreakingSpace;
+<input type="radio" id="item" [(ngModel)]="searchMenuType" name="searchMenuType" value="m" checked/><label for="item">&nbsp;by Menu item</label>
+&nbsp;
+<input type="radio" id="ingr" [(ngModel)]="searchMenuType" name="searchMenuType" value="i"/> <label for="ingr"> &nbsp;by Ingredients</label>
+&nbsp;
+<input type="button" value="Search" class="btn btn-success" (click)="showFilteredShopmenusData(searchMenuName,searchMenuType)"/>
+&nbsp;
+<input type="button" value="Reset List " class="btn btn-info" (click)="resetFilter()"/>
+
+<hr/>
+
+<div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col-9">
+
+        <table class="table table-striped">
+            <tr>
+                <th>Menu Item</th>
+                <th>Yum Yum</th>
+                <th>Price</th>
+                <th>Action</th>
+                <th>Ingredients</th>
+            </tr>
+            <tr *ngFor="let shopmenu of shopmenuinfo">
+                <td>{{shopmenu.name}}</td>
+                <td><img src="assets/menu/imagesPizza/{{shopmenu.imagepath}}"  height="120px" width="120px"/></td>
+                <td>{{shopmenu.price}}</td>
+                <td>
+               <!-- <input type="button"  value="Buy" class="btn btn-success" (click)="shopmenu.id" /> -->
+                    <input type="button"  value="Buy" class="btn btn-success" (click)="buyMenuItemData(shopmenu.id)" />
+                </td>
+                <td>{{shopmenu.descr}}</td>
+            </tr>
+        </table>
+
+      </div>
+      <div class="col-3">
+        <div class="card-header">
+            <b>Basket</b>
+        </div>
+        <table class="table table-striped">
+            <tr >
+                <td [colSpan]="3"><hr></td>
+            </tr> 
+            <tr *ngIf="basketList.length == 0" >
+                <td [colSpan]="3">{{basketMessage}}</td>
+            </tr>
+            <tr *ngIf="basketList.length > 0">
+                <th>Item</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngIf="basketList.length > 0" >
+                <td [colSpan]="3"><hr></td>
+            </tr> 
+            <tr *ngFor="let item of basketList let i=index">
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <input type="button"  value="Remove" class="btn btn-danger " (click)="removeBasketItem(i)" />
+                </td>
+            </tr> 
+            <tr *ngIf="basketList.length > 0" >
+                <td [colSpan]="3"><hr></td>
+            </tr>                       
+            <tr *ngIf="basketList.length > 0" >
+                <td>Total</td>
+                <td>{{basketTotal}}</td>
+                <td></td>
+            </tr>
+
+        </table>
+
+        <div class="card-header" *ngIf="basketList.length > 0">
+            <hr>
+            <b>Checkout</b>
+            <hr>
+        
+            <form #myform="ngForm" class="align-items-start">
+                *Card holder name: Min-5
+                <input type="text" [maxlength]="60" class="form-control" [(ngModel)]="orderPayment.payname" name="payname" required="true"/>
+                *Card number: 16 digits
+                <input type="number" maxlength="16" class="form-control"  [(ngModel)]="orderPayment.paycardno" name="paycardno" />
+                *Expity date: 4 digits
+                <input type="number" [maxlength]="4" class="form-control"  [(ngModel)]="orderPayment.payexpdate" name="payexpdate" />
+                *Three digits: 3 digits
+                <input type="number" maxlength="3" class="form-control"  [(ngModel)]="orderPayment.paythreedigits" name="paythreedigits" />
+                Amount:
+                <input type="number"  class="form-control"  [(ngModel)]="orderPayment.payamount" name="paypayamount" disabled />
+                <div>
+                    <br>
+                    <input type="button"  value="Pay Now" class="btn btn-success" (click)="makePayment()" />
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>

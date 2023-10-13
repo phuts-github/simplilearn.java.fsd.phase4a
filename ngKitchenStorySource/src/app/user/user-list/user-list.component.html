@@ -1,0 +1,26 @@
+<table class="table table-striped">
+    <tr>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email ID</th>
+        <th>Create Stamp</th>
+        <th>Update stamp</th>          
+        <th>Actions------------------------</th>
+    </tr>
+    <tr *ngFor="let user of userinfo">
+        <td>{{user.id}}</td>
+        <td>{{user.fname}}</td>
+        <td>{{user.lname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.createdate}}</td>
+        <td>{{user.modifydate}}</td>        
+        <td>
+            <input type="button"  value="View" class="btn btn-info" (click)="viewUserData(user.id)" />
+            &nbsp;
+            <input type="button"  value="Modify" class="btn btn-success" (click)="updateUserData(user.id)" />            
+            &nbsp;
+            <input type="button"  value="Delete" class="btn btn-danger" (click)="deleteUserData(user.id)" />
+        </td>
+    </tr>
+</table>
